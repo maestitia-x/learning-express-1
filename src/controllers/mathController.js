@@ -1,5 +1,5 @@
 
-export function echoHander(req, res) {
+export function echoHandler(req, res) {
     res.status(200).json({
         message:"Veri basariyla alindi",
         receivedData: req.body

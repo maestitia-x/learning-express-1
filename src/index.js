@@ -28,11 +28,11 @@ app.use('/math', mathRoutes)
 
 
 app.use((req, res) => {
-    res.status(404).json("Route bulunamadi")
+    res.status(404).json({message:"Route Bulunamadi"})
 })
 
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
     console.log(err)
     res.status(500).json({message:"Sunucu hatasi!", error: err.message})
 })

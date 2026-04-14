@@ -1,10 +1,10 @@
 import express from "express";
-import {echoHander, sumHandler} from "../controllers/mathController.js";
+import {echoHandler, sumHandler} from "../controllers/mathController.js";
 
 const router = express.Router()
 
 
-router.post("/echo",echoHander )
+router.post("/echo",echoHandler )
 
 router.post("/sum", sumHandler)
 
