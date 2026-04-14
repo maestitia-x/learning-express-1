@@ -1,24 +1,17 @@
 import express from 'express'
 import checkAuth from "../middleware/checkAuth.js";
+import {homeHandler, healthHandler, crashHandler, adminHandler} from "../controllers/mainController.js";
 
 const router = express.Router()
 
 // routes GET
-router.get('/admin', checkAuth, (req, res)=> {
-    res.send("Welcome to the admin page")
-})
+router.get('/admin', checkAuth,adminHandler )
 
-router.get("/", (req, res) => {
-    res.send("Ana Sayfa")
-})
+router.get("/", homeHandler)
 
-router.get("/health", (req, res) => {
-    res.send("Server Ayakta")
-})
+router.get("/health", healthHandler )
 
 // Route CRASH
-router.get('/crash', (req, res)=>{
-    throw new Error("Beklenmedik bir hata!")
-})
+router.get('/crash', crashHandler)
 
 export default router
