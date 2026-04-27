@@ -2,12 +2,12 @@ import express from 'express'
 import loggerMiddleWare from "./middleware/logger.js";
 import mainRoutes from "./routes/mainRoutes.js";
 import mathRoutes from "./routes/mathRoutes.js";
-
+import config from './config.js'
 
 
 // middleware
 const app = express()
-const PORT = process.env.PORT
+const PORT = config.PORT
 
 
 app.use(express.json())
@@ -41,6 +41,6 @@ app.listen(PORT, (error)=>{
     if (error) {
         throw error
     }
-    console.log(`${process.env.APP_NAME} Serveri ${PORT} portunda calisiyor`)
+    console.log(`${config.APP_NAME} Serveri ${PORT} portunda calisiyor`)
 })
 
