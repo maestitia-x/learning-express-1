@@ -7,7 +7,7 @@ import mathRoutes from "./routes/mathRoutes.js";
 
 // middleware
 const app = express()
-const PORT = 3000;
+const PORT = process.env.PORT
 
 
 app.use(express.json())
@@ -41,6 +41,6 @@ app.listen(PORT, (error)=>{
     if (error) {
         throw error
     }
-    console.log(`Server ${PORT} portunda calisiyor`)
+    console.log(`${process.env.APP_NAME} Serveri ${PORT} portunda calisiyor`)
 })
 
