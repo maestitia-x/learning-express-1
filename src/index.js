@@ -1,5 +1,4 @@
 import express from 'express'
-import checkAuth from './middleware/checkAuth.js'
 import loggerMiddleWare from "./middleware/logger.js";
 import mainRoutes from "./routes/mainRoutes.js";
 import mathRoutes from "./routes/mathRoutes.js";
@@ -25,7 +24,7 @@ app.use('/math', mathRoutes)
 
 
 
-
+-
 
 app.use((req, res) => {
     res.status(404).json({message:"Route Bulunamadi"})
